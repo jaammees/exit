@@ -80,7 +80,7 @@ var LevelSelect = function(cursor) {
 //      text.setAttribute('width', '5');
       var levelNumber = i + 1;
       text.setAttribute('value', levelNumber);
-      text.setAttribute('scale', '4 4 4');
+      text.setAttribute('scale', '2.6 2.6 2.6');
       tile.append(text);
 
       levelText.push(text);
@@ -194,6 +194,7 @@ var LevelSelect = function(cursor) {
   }
 
   _this.getLevelAvailable = function(index) {
+    
     return levelAvailable[index];
   }
 

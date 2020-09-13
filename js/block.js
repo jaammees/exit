@@ -12,6 +12,9 @@ var BLOCK_RED          = 10;
 var BLOCK_GREEN        = 11;
 var BLOCK_EXIT         = 12;
 
+var ARROW_COLOR = '#cc6633';
+var ARROW_COLOR_ACTIVE = '#ee9988';
+
 var Block = function(blockType, opacityValue, blockEntity) {
   var _this = this;
 
@@ -170,6 +173,8 @@ var Block = function(blockType, opacityValue, blockEntity) {
         }
 
         if(exitFinished) {
+          type = BLOCK_EMPTY;
+
         }
       }
     }
@@ -304,7 +309,7 @@ var Block = function(blockType, opacityValue, blockEntity) {
     
     triangle = document.createElement('a-triangle');
     triangle.setAttribute('shadow', 'receive: true');
-    triangle.setAttribute('color', '#c00');
+    triangle.setAttribute('color', ARROW_COLOR);
     triangle.setAttribute('position', '0 -0.5 0.1');
     triangle.setAttribute('vertex-a', '0 0 0.2');
     triangle.setAttribute('vertex-b', '0.2 0 -0.2');
@@ -318,7 +323,7 @@ var Block = function(blockType, opacityValue, blockEntity) {
     entity.append(triangle);
     plane = document.createElement('a-plane');
     plane.setAttribute('shadow', 'receive: true');
-    plane.setAttribute('color', '#c00');
+    plane.setAttribute('color', ARROW_COLOR);
     plane.setAttribute('scale', '0.2 0.15 1');
     plane.setAttribute('position', '0 -0.5 -0.175');
     plane.setAttribute('rotation', '-90 0 0');
@@ -342,8 +347,8 @@ var Block = function(blockType, opacityValue, blockEntity) {
       case BLOCK_SOUTH:
       case BLOCK_EAST:
       case BLOCK_WEST:
-        triangle.setAttribute('color', '#0f0');
-        plane.setAttribute('color', '#0f0');
+        triangle.setAttribute('color', ARROW_COLOR_ACTIVE);
+        plane.setAttribute('color', ARROW_COLOR_ACTIVE);
         break;
       case BLOCK_JUMP:
         box.setAttribute('position', new THREE.Vector3(0, -0.4, 0));
@@ -357,8 +362,8 @@ var Block = function(blockType, opacityValue, blockEntity) {
       case BLOCK_SOUTH:
       case BLOCK_EAST:
       case BLOCK_WEST:
-        triangle.setAttribute('color', '#f00');
-        plane.setAttribute('color', '#f00');
+        triangle.setAttribute('color', ARROW_COLOR);
+        plane.setAttribute('color', ARROW_COLOR);
         break;
       case BLOCK_JUMP:
         box.setAttribute('position', new THREE.Vector3(0, -0.47, 0));

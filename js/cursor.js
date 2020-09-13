@@ -1,5 +1,24 @@
 var Cursor = function() {
   var cursor = document.getElementById('block-cursor');
+  var cursorEntities = [];
+
+  var toolEntity = document.createElement('a-plane');
+  toolEntity.setAttribute('rotation', '-90 0 0');
+  toolEntity.setAttribute('position', '0 -0.52 0');
+  toolEntity.setAttribute('scale', '0.9 0.9 0.9');
+  toolEntity.setAttribute('color', '#444444');
+  toolEntity.setAttribute('visible', false);
+  cursor.append(toolEntity);
+  cursorEntities.push(toolEntity);
+
+  for(var i = 0; i < TOOL_COUNT; i++) {
+    var toolEntity = document.createElement('a-entity');
+    toolEntity.setAttribute('visible', false);
+    cursor.append(toolEntity);  
+    typeBlock = new Block(i + 1, 0.4, toolEntity);
+    cursorEntities.push(toolEntity);
+  }
+
   var type = false;
   var typeBlock = null;
   var typeEntity = null;
@@ -13,7 +32,12 @@ var Cursor = function() {
     }
 
     type = blockType;
+    for(var i = 0; i < TOOL_COUNT + 1; i++) {
+      
+      cursorEntities[i].setAttribute('visible', i == type);
+    }
 
+    /*
     if(typeEntity) {
       // remove old cursor
       //typeEntity.parentNode.removeChild(typeEntity);
@@ -38,6 +62,7 @@ var Cursor = function() {
       typeEntity.setAttribute('color', '#444444');
       cursor.append(typeEntity);
     }
+    */
 
     if(typeEntity) {
       if(!visible ) {

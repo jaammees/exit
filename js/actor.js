@@ -4,6 +4,7 @@ var ACTOR_ENEMY  = 2
 var ACTOR_STATE_NORMAL  = 1;
 var ACTOR_STATE_EXITING = 2;
 var ACTOR_STATE_EXITED  = 3;
+var ACTOR_STATE_GONE    = 4;
 
 
 var Actor = function(actorType) {
@@ -200,7 +201,7 @@ var Actor = function(actorType) {
   }
   var tickNormal = function(time, timeDelta) {
     onGround = false;
-    direction.y -= timeDelta * 0.009;// 0.009;
+    direction.y -= timeDelta * 0.0086;// 0.009;
 
 
     var x = position.x + direction.x * timeDelta * speed;
@@ -373,7 +374,13 @@ var Actor = function(actorType) {
       g_sound.playSound(SOUND_FALL);
     }
     if(y < -20) {
-      g_playfield.restartLevel();
+      if(type == ACTOR_FRIEND) {
+        g_playfield.restartLevel();
+      }
+
+      if(type == ACTOR_ENEMY && y < -40) {
+        state = ACTOR_STATE_GONE;
+      }
     }
 
     if(type == ACTOR_FRIEND) {

@@ -274,14 +274,20 @@ var Playfield = function() {
         blockType = BLOCK;
       }
 
+      if(blockType == BLOCK_EXIT && blocks[z][y][x].getExitUsed()) {
+        blockType = BLOCK_EMPTY;
+        
+      }
+  
+
       return blockType;
     }
 
     return BLOCK_EMPTY;
   }
 
-  var blockMouseEnter = function(event) {
 
+  var blockMouseEnter = function(event) {
 
     var block = event.target;
     if(block.getAttribute('isblock') == null) {
@@ -295,6 +301,8 @@ var Playfield = function() {
     var z = parseInt(position.z, 10);
 
 
+    
+    
     if(x < 0 || x >= gridWidth || y < 0 || y >= gridHeight - 1 || z < 0 || z >= gridDepth) {
       cursor.setVisible(false);
       return;
@@ -305,6 +313,7 @@ var Playfield = function() {
     }
 
     var currentBlockType = _this.getBlockType(x, y, z);
+    
     if(currentBlockType > 5) {
       // cant replace these blocks
       return;
@@ -360,7 +369,9 @@ var Playfield = function() {
         // put back in the palette
         var currentTypeCount = palette.getToolCount(currentBlockType);
         currentTypeCount++;
-        palette.setToolCount(currentBlockType, currentTypeCount);
+        if(currentBlockType !== 0) {
+          palette.setToolCount(currentBlockType, currentTypeCount);
+        }
       } 
     
       gridAddBlock(x, y, z, currentToolIndex);
@@ -380,9 +391,9 @@ var Playfield = function() {
           palette.selectTool(currentBlockType);
         } else {
           palette.selectTool(0);
-          for(var i = 1; i < TOOL_COUNT; i++) {
-            if(palette.getToolCount(i) > 0) {
-              palette.selectTool(i);
+          for(var i = 0; i < TOOL_COUNT; i++) {
+            if(palette.getToolCount(i + 1) > 0) {
+              palette.selectTool(i + 1);
               break;
             }
           }

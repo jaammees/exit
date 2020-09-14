@@ -32,9 +32,11 @@ var Cursor = function() {
     }
 
     type = blockType;
-    for(var i = 0; i < TOOL_COUNT + 1; i++) {
-      
-      cursorEntities[i].setAttribute('visible', i == type);
+    
+    if(!g_playfield.getIsMobile()) {
+      for(var i = 0; i < TOOL_COUNT + 1; i++) {      
+        cursorEntities[i].setAttribute('visible', i == type);
+      }
     }
 
     /*

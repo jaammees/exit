@@ -20,9 +20,9 @@
     
   </head>
   <body>
-    <a-scene game background="color: #111144" shadow="type: basic" cursor="rayOrigin: mouse;" raycaster="objects: .clickable">
-      <a-entity id="laser" laser-controls="hand: right" raycaster="objects: .clickable"></a-entity>      
-      <a-entity id="laser" laser-controls="hand: left" raycaster="objects: .clickable"></a-entity>      
+    <a-scene game background="color: #111144" shadow="type: basic" cursor="rayOrigin: mouse; fuse: false" raycaster="objects: .clickable">
+      <a-entity id="laser-right" laser-controls="hand: right" raycaster="objects: .clickable"></a-entity>      
+      <a-entity id="laser-left" laser-controls="hand: left"  raycaster="objects: .clickable"></a-entity>      
       <a-light type="ambient" color="#555577"></a-light>      
 
       <a-entity id="camera-rotation" rotation="0 0 0">

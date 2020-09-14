@@ -320,7 +320,9 @@ var Playfield = function() {
     }
     
     cursor.setPosition(x, y, z);
-    cursor.setVisible(true);
+    if(!g_playfield.getIsMobile()) {
+      cursor.setVisible(true);
+    }
   }
 
   var blockMouseLeave = function(event) {
@@ -544,19 +546,23 @@ var Playfield = function() {
         scene.removeAttribute('cursor');
         scene.removeAttribute('raycaster');
         holder.setAttribute('rotation', new THREE.Vector3(0, 180, 0));
-        holder.setAttribute('position', new THREE.Vector3(0, -1.5, 1));
+        holder.setAttribute('position', new THREE.Vector3(0, -1.5, 2));
         vrMode = true;
       }
     } else {      
       
       if(vrMode === true || vrMode === -1) {
-        
-        cameraRotation.setAttribute('rotation', new THREE.Vector3(-45, 0, 0));
+        if(scene.isMobile) {
+          cameraRotation.setAttribute('rotation', new THREE.Vector3(0, 0, 0));
+          holder.setAttribute('position', new THREE.Vector3(0, -1, -1.5));
+        } else {
+          cameraRotation.setAttribute('rotation', new THREE.Vector3(-45, 0, 0));
+          holder.setAttribute('position', new THREE.Vector3(0, -1, -2));
+        }
         scene.setAttribute('cursor', 'rayOrigin: mouse');
         scene.setAttribute('raycaster', 'objects: .clickable');
 
         holder.setAttribute('rotation', new THREE.Vector3(0, 0, 0));
-        holder.setAttribute('position', new THREE.Vector3(0, -1, -2));
 
         vrMode = false;
       }
@@ -629,5 +635,9 @@ var Playfield = function() {
       }
     }
     return false;
+  }
+
+  _this.getIsMobile = function() {
+    return scene.isMobile && vrMode !== true;
   }
 }

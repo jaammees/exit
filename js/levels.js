@@ -459,7 +459,7 @@ var level = [
   2, 
 
   // friend position, direction
-  7, 1, 7, 1, 0, 0,
+  7, 1, 6, 1, 0, 0,
 
   // enemy
   4, 3, 10, 1, 0, 0,

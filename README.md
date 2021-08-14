@@ -7,14 +7,14 @@ Below is the post-mortem. For other entry post-mortems, see https://js13kgames.g
 
 ## Game Concept
 
-![game video](https://raw.githubusercontent.com/jaammees/exit/images/media/exit.gif)
+![game video](https://raw.githubusercontent.com/jaammees/exit/master/images/exit.gif)
 
 The idea for the game was to be a table top looking game where the player solves puzzles to guide creatures to an exit. The creatures wouldn't be controlled directly, but influenced by placing items on the table top. Influences for this were Lemmings, Chu Chu Rocket, Hitman Go.
 
 The game was to be stealth game where the creatures would need to react the exit without being found by robots. The robots would have predictable behaviours which would allow the player to plan on how to avoid them.
 
 Impossible Mission on Commodore 64:
-![Robots](https://raw.githubusercontent.com/jaammees/racer/master/images/impossiblemission.png)
+![Robots](https://raw.githubusercontent.com/jaammees/exit/master/images/impossiblemission.png)
 
 ## Controls / Headset limitations
 

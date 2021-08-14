@@ -5,13 +5,23 @@ Play it here: https://js13kgames.com/entries/exit
 
 Below is the post-mortem. For other entry post-mortems, see https://js13kgames.github.io/resources/
 
-## Game Summary
+## Game Concept
 
-The idea for the game was to be a table top game where the player solves puzzles to guide creatures to an exit. The creatures have to reach the exit without being found by enemies.
+![game video](https://raw.githubusercontent.com/jaammees/exit/images/media/exit.gif)
 
-## Control / Headset limitations
+The idea for the game was to be a table top looking game where the player solves puzzles to guide creatures to an exit. The creatures wouldn't be controlled directly, but influenced by placing items on the table top. Influences for this were Lemmings, Chu Chu Rocket, Hitman Go.
 
-The intention was for the game to be usable on desktop, mobile and both 3 degree of freedom and 6 degree of freedom VR headsets. The common control method between all these devices is a pointer control with a single button.
+The game was to be stealth game where the creatures would need to react the exit without being found by robots. The robots would have predictable behaviours which would allow the player to plan on how to avoid them.
+
+Impossible Mission on Commodore 64:
+![Robots](https://raw.githubusercontent.com/jaammees/racer/master/images/impossiblemission.png)
+
+## Controls / Headset limitations
+
+The intention was for the game to be usable on desktop, mobile and both 3 Degrees of Freedom and 6 Degrees of Freedom VR headsets. 
+
+The common control method between all these devices is a pointer control with a single button.
+Compatibility with 3 DoF VR devices and Desktop/Mobile with only a pointer meant the game couldn't rely on the user being able to walk around the play area. Teleportation is a solution to this, but I thought for a simple game, adding teleportation controls might complicate it.
 
 ## VR Considerations
 
@@ -23,13 +33,14 @@ At the time of developing the project there seemed to be a range of different co
 
 ## Puzzle design
 
-The aim for the design of the puzzles was to start easy, then increase the difficulty, but also add in levels which were 'easy but rewarding'.
+The aim for the design of the puzzles was to start easy, then increase the difficulty, but also add in levels which were 'easy but rewarding'. Each initial introduces a new concept and the later levels test the use of the concepts.
 
 The puzzles should be playable on desktop computer, but 3d awareness in vr would give an advantage. The limitation of being playable on desktop and 3 DOF VR headsets did limit the layout for levels from what i was initially imagining. In hindsight, maybe the table should have been able to be rotated by the player. Testing would have to had been done to see if this would cause motion sickness.
 
 ## A-Frame Programming
 
-This was my first project in A-Frame, so wasn't always sure if i was doing things the correct way. I'm not sure if this project should be used as an example of how to do things in A-Frame.
+This was my first project in A-Frame, so wasn't always sure if i was doing things the correct way. 
+A-Frame was quite easy to use, all game objects are composed of simple shapes and are placed within a 3d grid.
 
 ## Device Testing
 I had access to a Daydream headset/controller with a Pixel phone for testing. This is a 3 DOF device.

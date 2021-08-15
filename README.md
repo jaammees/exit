@@ -19,6 +19,8 @@ Impossible Mission on Commodore 64:
 
 ## Controls / Headset limitations
 
+![Controllers](https://raw.githubusercontent.com/jaammees/exit/master/images/controllers.png)
+
 The intention was for the game to be playable on desktop, mobile and both 3 Degrees of Freedom and 6 Degrees of Freedom VR headsets. 
 
 At the time of developing the project there seemed to be a range of different controllers that were used for VR. In order to be usable on most VR devices as well as mobile and desktop, the controls were limited to a pointer device with one button. If the player owned two VR controllers, it would allow them to use both.
@@ -36,7 +38,7 @@ Another aim was to not have the jarring effect in VR of a sharp switch between l
 
 ## Puzzle design
 
-The aim for the design of the puzzles was to start easy, then increase the difficulty, but also add in levels which were 'easy but rewarding'. There would be some levels which introduce a new concept and then later levels test the use of that concept, or the combination of concepts. However, the game can't take too long in introducing the concepts, as players can get bored/frustrated if it is taking too long to get to the main game. Also, designing and testing puzzles can be difficult, as once you know the solution to the puzzle, you can lose track of how difficult/easy it is, so playtesting with other people would be important.
+The aim for the design of the puzzles was to start easy, then increase the difficulty, but also add in levels which were 'easy but rewarding'. There would be some levels which introduce a new concept and then later levels test the use of that concept, or the combination of concepts. However, the game can't take too long in introducing the concepts, as players can get bored/frustrated if it is taking too long to get to the main game. Also, designing and testing puzzles can be difficult, as once you know the solution to the puzzle, you can lose track of how difficult/easy it is, so playtesting with other people would be important. Some puzzles were to be timing based, but not have to rely too much on player reflexes.
 
 The puzzles would be playable on desktop computer, but 3d awareness in vr would give an advantage. The limitation of being playable on desktop and 3 DOF VR headsets did limit the layout for levels from what i was initially imagining. In hindsight, maybe the table should have been able to be rotated by the player. Testing would have to had been done to see if this would cause motion sickness.
 
@@ -50,7 +52,7 @@ All game objects are composed of simple shapes and are placed within a 3d grid.
 
 ## Sound
 
-The aim was to keep the sound simple to match the simple nature of the graphics.
+The aim was to keep the sound simple to match the simple nature of the graphics. Each action/event in the game would have a corresponding sound.
 
 ## Device Testing
 

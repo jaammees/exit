@@ -36,15 +36,21 @@ Another aim was to not have the jarring effect in VR of a sharp switch between l
 
 ## Puzzle design
 
-The aim for the design of the puzzles was to start easy, then increase the difficulty, but also add in levels which were 'easy but rewarding'. Each of the initial levels would introduce a new concept and the later levels test the use of the concepts. I've made the mistake in game jams of making games that are too difficult
+The aim for the design of the puzzles was to start easy, then increase the difficulty, but also add in levels which were 'easy but rewarding'. There would be some levels which introduce a new concept and then later levels test the use of that concept, or the combination of concepts. However, the game can't take too long in introducing the concepts, as players can get bored/frustrated if it is taking too long to get to the main game. Also, designing and testing puzzles can be difficult, as once you know the solution to the puzzle, you can lose track of how difficult/easy it is, so playtesting with other people would be important.
 
 The puzzles would be playable on desktop computer, but 3d awareness in vr would give an advantage. The limitation of being playable on desktop and 3 DOF VR headsets did limit the layout for levels from what i was initially imagining. In hindsight, maybe the table should have been able to be rotated by the player. Testing would have to had been done to see if this would cause motion sickness.
+
+I wanted it to be visible to the player how many levels there are, and their progression, as seeing progression and having a goal can provide incentive to keep playing.
 
 ## A-Frame Programming
 
 This was my first project in A-Frame, so wasn't always sure if I was doing things the correct way. The HTML document defined the position of the main elements and then the dynamic elements were created with document.createElement().
 
 All game objects are composed of simple shapes and are placed within a 3d grid.
+
+## Sound
+
+The aim was to keep the sound simple to match the simple nature of the graphics.
 
 ## Device Testing
 
@@ -56,8 +62,8 @@ I also had access to a Vive headset. This is the main device I used testing. The
 
 I left testing in VR until too late in the project. I didn't have a proper VR setup, so for most of the timeframe of development I was developing and testing on a desktop computer.  When I eventually came to testing in VR I found a few problems, such as you'd have to hold the controller at an uncomfortable angle to reach certain squares on the board, or in 3 DOF headsets it might be very difficult or impossible to see some squares because of obstacles blocking them. As I'd left VR testing so late, I had to rush to redesign levels to suit the VR.
 
-I ran out of time on the project and while rushing to finish forgot some of the items on my to do list, for example the characters were meant to be placeholders until I came up with something better.
+I ran out of time on the project and while rushing to finish forgot some of the items on my to do list, for example the characters were meant to be placeholders until I came up with something better, there were elements of polish I wanted to add but never got to.
 
 ## Some things that went right
 
-Even though they weren't intended to be final, I think the characters and robots look ok just made out of simple shapes. I think it was a good decision to aim for a game that was also playable on mobile and desktop. 
+Even though they weren't intended to be final, I think the design of the creatures and robots look ok. I think it was a good decision to aim for a game that was also playable on mobile and desktop. 
